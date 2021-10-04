@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@/*": ["./*"],
+        "@/atoms/*": ["components/atoms/*"],
+        "@/constants/*": ["constants/*"],
+        "@/containers/*": ["containers/*"],
+        "@/data/*": ["data/*"],
+        "@/messages/*": ["components/messages/*"],
+        "@/molecules/*": ["components/molecules/*"],
+        "@/public/*": ["public/*"],
+        "@/slices/*": ["slices/*"],
+        "@/styled/*": ["components/styled/*"],
+      }
+    }
+}
