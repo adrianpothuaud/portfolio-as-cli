@@ -1,15 +1,15 @@
-import {Fragment, useEffect, useRef, useState} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
+import { Fragment, useEffect, useRef, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { init, send } from 'emailjs-com'
-import {useRouter} from 'next/router'
+import { useRouter } from 'next/router'
 
 import { ConsoleWrapper } from '@/styled/ConsoleWrapper'
 import { Home } from '@/messages/Home'
 import { Log } from '@/components/molecules/Log'
-import {Code} from '@/styled/Code'
-import {selectMessage, selectEmail, selectStep, setMessage, setEmail, setStep} from '@/slices/contactSlice'
-import {TerminalPrompt} from '@/atoms/TerminalPrompt'
-import {Modal} from '@/molecules/Modal'
+import { Code } from '@/styled/Code'
+import { selectMessage, selectEmail, selectStep, setMessage, setEmail, setStep } from '@/slices/contactSlice'
+import { TerminalPrompt } from '@/atoms/TerminalPrompt'
+import { Modal } from '@/molecules/Modal'
 
 init('user_FeMhdkhfAB6RubPltsplj')
 
@@ -101,7 +101,7 @@ export default function ContactPage() {
   return (
     <ConsoleWrapper>
       <Home cwd='~/contact'/>
-      <Log noCaret>Afin de me contacter, veuillez s&apos;il-vous-plait renseigner quelques informations.</Log>
+      <Log cwd='~/contact'>Afin de me contacter, veuillez s&apos;il-vous-plait renseigner quelques informations.</Log>
       <Log cwd='~/contact'>Tout d&apos;abord, votre adresse email:</Log>
       <TerminalPrompt
         cwd='~/contact'
@@ -120,6 +120,7 @@ export default function ContactPage() {
             inputRef={messageRef}
             onChange={changeMessageHandler}
             onKeyPress={keyPressMessageHandler}
+            textarea
             value={message}
           />
           {isMessageFilled && (

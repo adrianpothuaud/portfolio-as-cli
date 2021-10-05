@@ -1,11 +1,11 @@
-import {Fragment, useEffect, useRef} from 'react'
-import {useDispatch, useSelector} from 'react-redux'
-import {useRouter} from 'next/router'
+import { Fragment, useEffect, useRef } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useRouter } from 'next/router'
 import Head from 'next/head'
 
 import { ConsoleWrapper } from '@/styled/ConsoleWrapper'
 import { TerminalPrompt } from '@/components/atoms/TerminalPrompt'
-import {addMessage, resetInput, selectInput, selectMessages, setInput} from '@/slices/homeSlice'
+import { addMessage, resetInput, selectInput, selectMessages, setInput } from '@/slices/homeSlice'
 import { Contact } from '@/messages/Contact'
 import { Help } from '@/messages/Help'
 import { NotFound } from '@/messages/NotFound'
@@ -13,6 +13,8 @@ import { TypeHelp } from '@/messages/TypeHelp'
 import { Share } from '@/messages/Share'
 import { Welcome } from '@/messages/Welcome'
 import { gameCommands } from '@/data/gameCommands'
+import { Photo } from '@/messages/Photo'
+import { Info } from '@/messages/Info'
 
 export default function HomePage() {
   const dispatch = useDispatch()
@@ -70,10 +72,12 @@ export default function HomePage() {
       </Head>
       <ConsoleWrapper>
         {messages.map(message => ({
-          'contact': <Contact key={Math.random()}/>,
           'aide': <Help key={Math.random()}/>,
+          'contact': <Contact key={Math.random()}/>,
+          'info': <Info key={Math.random()}/>,
           'notFound': <NotFound cwd='~/' key={Math.random()}/>,
           'partage': <Share key={Math.random()}/>,
+          'photo': <Photo key={Math.random()}/>,
           'typeHelp': <TypeHelp key={Math.random()}/>,
           'welcome': <Welcome key={Math.random()}/>
         }[message]))}

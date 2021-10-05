@@ -5,9 +5,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "jest:unit": "jest --group=unit --watch",
+    "jest:unit:ci": "jest --group=unit --ci",
+    "jest:int": "jest --group=integration --watch",
+    "jest:int:ci": "jest --group=integration --ci",
+    "cy": "cypress open",
+    "cy:term": "cypress run",
+    "cy:term:ci": "cypress run --headless",
+    "lint": "eslint . --fix",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint . --fix"
+    "start": "next start"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
@@ -23,6 +30,7 @@
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.13.2",
+    "cypress": "^8.5.0",
     "eslint": "^7.32.0",
     "eslint-config-next": "^11.1.2",
     "eslint-plugin-cypress": "^2.12.1",

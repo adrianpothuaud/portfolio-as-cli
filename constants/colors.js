@@ -1,8 +1,8 @@
 export const appColors = {
-  'Black Chocolate': '#191308',
-  'Fire Opal': '#EE6352',
-  'Cyan Process': '#08B2E3',
-  'Magnolia': '#EFE9F4',
-  'Magnolia Semi Transparent': 'rgba(239, 233, 244, 0.75)',
-  'Forest Green Crayola': '#57A773',
+  'Background': '#1C1D21',
+  'Red': '#ED1C24',
+  'Blue': '#0090C1',
+  'Text White': '#FDFFFC',
+  'Text White Semi Transparent': 'rgba(253, 255, 252, 0.75)',
+  'Green': '#508484',
 }

@@ -5,7 +5,7 @@ import { appColors } from '@/constants/colors'
 const paddingPixels = 8
 
 export const ConsoleWrapper = styled.div`
-  background-color: ${appColors['Black Chocolate']};
+  background-color: ${appColors.Background};
 
   padding: ${paddingPixels}px;
   
