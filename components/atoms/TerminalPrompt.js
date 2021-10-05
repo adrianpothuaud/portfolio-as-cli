@@ -5,7 +5,8 @@ import { BeforePromptCurrentFolderWrapper } from '@/styled/BeforePromptCurrentFo
 import { Input } from '@/styled/Input'
 import { PromptSymbol } from '@/styled/PromptSymbol'
 import { PromptWrapper } from '@/styled/PromptWrapper'
-import {PromptMessage} from '@/styled/PromptMessage'
+import { PromptMessage } from '@/styled/PromptMessage'
+import { Textarea } from '@/styled/Textarea'
 
 export const TerminalPrompt = (props) => {
   return (
@@ -15,14 +16,28 @@ export const TerminalPrompt = (props) => {
       {props.message && (
         <PromptMessage>{props.message}</PromptMessage>
       )}
-      <Input
-        autoComplete='off'
-        id={props.id || 'terminalInput'}
-        onChange={props.onChange}
-        onKeyPress={props.onKeyPress}
-        ref={props.inputRef}
-        value={props.value}
-      />
+      {!props.textarea && (
+        <Input
+          autoComplete='off'
+          id={props.id || 'terminalInput'}
+          onChange={props.onChange}
+          onKeyDown={props.onKeyDown}
+          onKeyPress={props.onKeyPress}
+          ref={props.inputRef}
+          value={props.value}
+        />
+      )}
+      {props.textarea && (
+        <Textarea
+          id={props.id || 'terminalInput'}
+          maxLength={150}
+          onChange={props.onChange}
+          onKeyPress={props.onKeyPress}
+          ref={props.inputRef}
+          rows={4}
+          value={props.value}
+        />
+      )}
     </PromptWrapper>
   )
 }

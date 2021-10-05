@@ -3,6 +3,6 @@ import { Log } from '@/components/molecules/Log'
 
 export const TypeHelp = () => {
   return (
-    <Log noCaret key={Math.random()}>Pour voir les commandes disponibles, tapez <Code>aide</Code>.</Log>
+    <Log cwd='~/' id='typeHelp' key={Math.random()}>Pour voir les commandes disponibles, tapez <Code>aide</Code>.</Log>
   )
 }

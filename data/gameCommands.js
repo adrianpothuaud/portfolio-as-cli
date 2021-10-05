@@ -1,5 +1,8 @@
 export const gameCommands = [
-  'contact',
   'aide',
+  'clear',
+  'contact',
+  'info',
   'partage',
+  'photo',
 ]

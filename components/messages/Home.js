@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { A } from '@/styled/A'
 import { Log } from '@/molecules/Log'
-import {Code} from '@/styled/Code'
+import { Code } from '@/styled/Code'
 
 export const Home = (props) => {
   return (

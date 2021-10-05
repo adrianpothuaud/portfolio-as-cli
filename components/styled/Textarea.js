@@ -1,7 +1,7 @@
 import { appColors } from '@/constants/colors'
 import styled from 'styled-components'
 
-export const Input = styled.input`
+export const Textarea = styled.textarea`
   caret-color: ${appColors['Text White']};
   color: ${appColors['Text White']};
   display: flex;

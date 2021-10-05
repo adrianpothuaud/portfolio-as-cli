@@ -1,5 +1,5 @@
 import { Fragment } from 'react'
-import {EmailShareButton, FacebookShareButton, LinkedinShareButton} from 'react-share'
+import { EmailShareButton, FacebookShareButton, LinkedinShareButton } from 'react-share'
 
 import { A } from '@/styled/A'
 import { B } from '@/styled/B'
@@ -18,7 +18,7 @@ export const Share = () => {
           email
         </EmailShareButton>
       </B></A>.</Log>
-      <Log noCaret>Partager mon CV sur <A><B>
+      <Log cwd='~/'>Partager mon CV sur <A><B>
         <FacebookShareButton
           url='https://apothuaud.vercel.app/'
           quote={'Jettes un oeil au CV d\'Adrian Pothuaud!'}
@@ -26,7 +26,7 @@ export const Share = () => {
           Facebook
         </FacebookShareButton>
       </B></A>.</Log>
-      <Log noCaret>Partager mon CV sur <A><B>
+      <Log cwd='~/'>Partager mon CV sur <A><B>
         <LinkedinShareButton
           url='https://apothuaud.vercel.app/'
           title={'Jettez un oeil au CV d\'Adrian Pothuaud!'}
