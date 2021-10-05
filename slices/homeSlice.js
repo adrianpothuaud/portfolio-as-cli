@@ -8,8 +8,8 @@ const initialState = {
   ]
 }
 
-export const gameSlice = createSlice({
-  name: 'game',
+export const homeSlice = createSlice({
+  name: 'home',
   initialState,
   reducers: {
     addMessage: (state, action) => {
@@ -28,9 +28,9 @@ export const {
   addMessage,
   resetInput,
   setInput,
-} = gameSlice.actions
+} = homeSlice.actions
 
-export const selectInput = (state) => state.game.input
-export const selectMessages = (state) => state.game.messages
+export const selectInput = (state) => state.home.input
+export const selectMessages = (state) => state.home.messages
 
-export default gameSlice.reducer
+export default homeSlice.reducer

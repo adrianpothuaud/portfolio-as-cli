@@ -4,13 +4,13 @@ html, body {
     margin: 0;
     padding: 0;
 
+    font-size: 1rem;
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.2rem;
 }
 
 input {
     font-family: 'Chakra Petch', sans-serif;
-    font-size: 1.2rem;
+    font-size: 1rem;
 
     background: none;
     border: none;

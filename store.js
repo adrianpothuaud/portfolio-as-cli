@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 
-import gameReducer from '@/slices/gameSlice'
+import contactReducer from '@/slices/contactSlice'
+import homeReducer from '@/slices/homeSlice'
 
 export const store = configureStore({
   reducer: {
-    game: gameReducer,
+    contact: contactReducer,
+    home: homeReducer,
   },
 })

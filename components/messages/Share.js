@@ -6,8 +6,10 @@ import { Log } from '@/components/molecules/Log'
 
 export const Share = () => {
   return (
-    <Fragment>
-      <Log><B>Facebook</B>: <A>partager</A>.</Log>
+    <Fragment key={Math.random()}>
+      <Log cwd='~/'><B>LinkedIn</B>: <A>partager</A>.</Log>
+      <Log noCaret><B>Twitter</B>: <A>partager</A>.</Log>
+      <Log noCaret><B>Facebook</B>: <A>partager</A>.</Log>
     </Fragment>
   )
 }

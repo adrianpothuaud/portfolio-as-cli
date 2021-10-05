@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { appColors } from '@/constants/colors'
 
-const paddingPixels = 32
+const paddingPixels = 8
 
 export const ConsoleWrapper = styled.div`
   background-color: ${appColors['Black Chocolate']};
@@ -18,4 +18,6 @@ export const ConsoleWrapper = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: flex-start;
+  
+  overflow-y: scroll;
 `

@@ -7,10 +7,12 @@ import { PromptWrapper } from '@/styled/PromptWrapper'
 
 export const Log = (props) => {
   return (
-    <PromptWrapper>
-      <BeforePromptCurrentFolderWrapper>~/</BeforePromptCurrentFolderWrapper>
-      <PromptSymbol>$</PromptSymbol>
-      <PromptMessage>{props.children}</PromptMessage>
+    <PromptWrapper className="log">
+      {!props.noCaret && (<BeforePromptCurrentFolderWrapper>{props.cwd}</BeforePromptCurrentFolderWrapper>)}
+      {!props.noCaret && (<PromptSymbol>$</PromptSymbol>)}
+      <PromptMessage className="message">
+        {props.children}
+      </PromptMessage>
     </PromptWrapper>
   )
 }
