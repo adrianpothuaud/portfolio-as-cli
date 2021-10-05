@@ -6,11 +6,11 @@ import { Log } from '@/components/molecules/Log'
 export const Help = () => {
   return (
     <Fragment key={Math.random()}>
-      <Log cwd='~/'><Code>emplois</Code>: Mes emplois</Log>
-      <Log noCaret><Code>projets</Code>: Mes projets</Log>
-      <Log noCaret><Code>formations</Code>: Mon parcours de formation</Log>
-      <Log noCaret><Code>contact</Code>: Me contacter</Log>
-      <Log noCaret><Code>partage</Code>: Partager mon CV</Log>
+      <Log cwd='~/'>Tapez <Code>emplois</Code> pour voir l&apos;historique et les descriptions de mes emplois.</Log>
+      <Log noCaret>Tapez <Code>projets</Code> pour la liste de mes projets.</Log>
+      <Log noCaret>Tapez <Code>formations</Code> pour voir mon parcours de formation.</Log>
+      <Log noCaret>Tapez <Code>contact</Code> pour me contacter.</Log>
+      <Log noCaret>Tapez <Code>partage</Code> pour partager mon CV sur les réseaux,</Log>
     </Fragment>
   )
 }
