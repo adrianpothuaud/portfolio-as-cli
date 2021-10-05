@@ -20,6 +20,13 @@ export const homeSlice = createSlice({
     },
     setInput: (state, action) => {
       state.input = action.payload
+    },
+    resetMessages: (state, action) => {
+      state.input = ''
+      state.messages = [
+        'welcome',
+        'typeHelp',
+      ]
     }
   }
 })
@@ -27,6 +34,7 @@ export const homeSlice = createSlice({
 export const {
   addMessage,
   resetInput,
+  resetMessages,
   setInput,
 } = homeSlice.actions
 

@@ -21,6 +21,7 @@ export const TerminalPrompt = (props) => {
           autoComplete='off'
           id={props.id || 'terminalInput'}
           onChange={props.onChange}
+          onKeyDown={props.onKeyDown}
           onKeyPress={props.onKeyPress}
           ref={props.inputRef}
           value={props.value}
