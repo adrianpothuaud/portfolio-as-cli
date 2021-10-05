@@ -10,7 +10,7 @@ export const Help = () => {
       <Log noCaret>Tapez <Code>projets</Code> pour la liste de mes projets.</Log>
       <Log noCaret>Tapez <Code>formations</Code> pour voir mon parcours de formation.</Log>
       <Log noCaret>Tapez <Code>contact</Code> pour me contacter.</Log>
-      <Log noCaret>Tapez <Code>partage</Code> pour partager mon CV sur les réseaux,</Log>
+      <Log noCaret>Tapez <Code>partage</Code> pour partager mon CV sur les réseaux.</Log>
     </Fragment>
   )
 }

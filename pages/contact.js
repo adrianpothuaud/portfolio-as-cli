@@ -22,7 +22,6 @@ export default function ContactPage() {
   const promptRef = useRef(null)
   const step = useSelector(selectStep)
   const [submitInput, setSubmitInput] = useState('')
-  const [printNotFound, setPrintNotFound] = useState(0)
   const [showModal, setShowModal] = useState(false)
   const [modalMessage, setModalMessage] = useState('')
   const router = useRouter()
@@ -36,13 +35,25 @@ export default function ContactPage() {
     else if (step === 'email' && emailRef.current) emailRef.current.focus()
   }, [messageRef, emailRef, promptRef, step])
 
+  const reset = () => {
+    dispatch(setEmail(''))
+    dispatch(setMessage(''))
+    dispatch(setStep('email'))
+  }
+
+  const goHome = () => {
+    reset()
+    router.push('/').then()
+  }
+
   const changeEmailHandler = (e) => {
     dispatch(setEmail(e.target.value))
   }
 
   const keyPressEmailHandler = (e) => {
     if (e.key === 'Enter') {
-      dispatch(setStep('message'))
+      if (e.target.value === 'accueil') goHome()
+      else dispatch(setStep('message'))
     }
   }
 
@@ -52,7 +63,8 @@ export default function ContactPage() {
 
   const keyPressMessageHandler = (e) => {
     if (e.key === 'Enter') {
-      dispatch(setStep('submit'))
+      if (e.target.value === 'accueil') goHome()
+      else dispatch(setStep('submit'))
     }
   }
 
@@ -62,24 +74,21 @@ export default function ContactPage() {
 
   const keyPressSubmitInputHandler = (e) => {
     if (e.key === 'Enter') {
-      if (submitInput === 'envoyer') {
+      if (e.target.value === 'accueil') goHome()
+      else if (submitInput === 'envoyer') {
         send('service_cc7szy2','template_742tkdl', {
           from_name: email,
           message,
           reply_to: email
         })
           .then(() => {
-            dispatch(setEmail(''))
-            dispatch(setMessage(''))
-            dispatch(setStep('email'))
+            reset()
             setShowModal(true)
             setModalMessage('Votre message a bien été envoyé!')
           })
           .catch((err) => {
             console.log('FAILED...', err)
           })
-      } else {
-        setPrintNotFound(printNotFound + 1)
       }
       setSubmitInput('')
     }
@@ -92,7 +101,7 @@ export default function ContactPage() {
   return (
     <ConsoleWrapper>
       <Home cwd='~/contact'/>
-      <Log cwd='~/contact'>Afin de me contacter, veuillez s&apos;il-vous-plait renseigner quelques informations.</Log>
+      <Log noCaret>Afin de me contacter, veuillez s&apos;il-vous-plait renseigner quelques informations.</Log>
       <Log cwd='~/contact'>Tout d&apos;abord, votre adresse email:</Log>
       <TerminalPrompt
         cwd='~/contact'
